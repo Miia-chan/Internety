@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+<script>
+function clearFunction(){
+  ctx.fillStyle="#FFFFFF";
+  ctx.clearRect(0, 0, c.width, c.height);
+  drawLines();
+}
+function drawLines(){
+  ctx.moveTo(500,0);
+  ctx.lineTo(500,500);
+  ctx.stroke();
+  ctx.moveTo(0,250);
+  ctx.lineTo(1000,250);
+  ctx.stroke();
+  for(i=0;i<=20;i++){
+    ctx.moveTo(i*50,240);
+    ctx.lineTo(i*50,260);
+    ctx.stroke();
+  }
+  for(i=0;i<=10;i++){
+    ctx.moveTo(490,i*50);
+    ctx.lineTo(510,i*50);
+    ctx.stroke();
+  }
+}
+function drawFunction(){
+  var a = parseFloat(document.getElementById('a').value);
+  var b = parseFloat(document.getElementById('b').value);
+  var c = parseFloat(document.getElementById('c').value);
+  ctx.fillStyle="#FF0000";
+  for(var i=-10; i<=10; i+=0.02){
+    var p = a*(i*i) + b*i + c*1;
+    var px = p*50;
+    ctx.fillRect(i*50+500, (-1)*px+250, 1, 1);
+  }
+}
+</script>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="1000" height="500" style="border:1px solid #000000;">
+</canvas>
+<div>
+    Wzór f-cji: <input type="text" id="a" size="1">x^2 +
+    <input type="text" id="b" size="1">x +
+    <input type="text" id="c" size="1">
+    <button onclick="drawFunction()">Rysuj</button>
+    <button onclick="clearFunction()">Wyczyść</button>
+  </div>
+  <script>
+  var c = document.getElementById('myCanvas');
+  var ctx = c.getContext("2d");
+  drawLines();
+  </script>
+</body>
+</html>

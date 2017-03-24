@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+<script>
+function prawo(){
+  var x = parseFloat(document.getElementById("x").value);
+  x  +=1;
+  document.getElementById('x').value = x;
+  var y = parseFloat(document.getElementById("y").value);
+  if(document.getElementById('z').value == "Opuszczony"){
+    ctx.lineTo(x+500,y+250);
+    ctx.stroke();
+  } else {
+    ctx.moveTo(x+500,y+250);
+  }
+}
+function lewo(){
+  var x = parseFloat(document.getElementById("x").value);
+  x  -=1;
+  document.getElementById('x').value = x;
+  var y = parseFloat(document.getElementById("y").value);
+  if(document.getElementById('z').value == "Opuszczony"){
+    ctx.lineTo(x+500,y+250);
+    ctx.stroke();
+  } else {
+    ctx.moveTo(x+500,y+250);
+  }
+}
+  function gora(){
+    var y = parseFloat(document.getElementById("y").value);
+    y = y - 1;
+    document.getElementById('y').value = y;
+    var x = parseFloat(document.getElementById("x").value);
+    if(document.getElementById('z').value == "Opuszczony"){
+      ctx.lineTo(x+500,y+250);
+      ctx.stroke();
+    } else {
+      ctx.moveTo(x+500,y+250);
+    }
+}
+function dol(){
+  var y = parseFloat(document.getElementById("y").value);
+  y = y + 1;
+  document.getElementById('y').value = y;
+  var x = parseFloat(document.getElementById("x").value);
+  if(document.getElementById('z').value == "Opuszczony"){
+    ctx.lineTo(x+500,y+250);
+    ctx.stroke();
+  } else {
+    ctx.moveTo(x+500,y+250);
+  }
+}
+function sprawdzanie(){
+  if (document.getElementById('z').value == "Podniesiony"){
+    document.getElementById('z').value = "Opuszczony";
+  } else document.getElementById('z').value = "Podniesiony";
+}
+
+</script>
+
+</head>
+
+<body>
+  <canvas id="myCanvas" width="1000" height="500" style="border:1px solid #000000;">
+</canvas>
+<table>
+    <tr><td><button onclick="gora()">Góra</button></td></tr>
+    <tr><td><button onclick="prawo()">Prawo</button></td></tr>
+    <tr><td><button onclick="dol()">Dół</button></td></tr>
+    <tr><td><button onclick="lewo()">Lewo</button></td></tr>
+    <tr><td><button onclick="sprawdzanie()">Lewo</button></td></tr>
+
+</table>
+<input id="x" type="text" value=0><br>
+<input id="y" type="text" value=0><br>
+<input id="z" type="text" value="Opuszczony"><br>
+<script>
+var c = document.getElementById('myCanvas');
+var ctx = c.getContext("2d");
+ctx.moveTo(500,250);
+</script>
+</body>
+</html>

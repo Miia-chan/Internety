@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nadawanie czcionek</title>
+</head>
+<body style="font-size:1em">
+  <script>
+  function powiekszTekst(){
+    var lista = document.getElementsByClassName('tekst');
+    for(var i=0;i<lista.length;i++){
+if(lista[i].style.fontSize=="")
+{lista[i].style.fontSize="1em";}
+var rozmiar=parseFloat(lista[i].style.fontSize);
+rozmiar +=0.2;
+lista[i].style.fontSize=rozmiar+"em";}
+}
+function zmniejszTekst(){
+  var lista = document.getElementsByClassName('tekst');
+  for(var i=0;i<lista.length;i++){
+if(lista[i].style.fontSize=="")
+{lista[i].style.fontSize="1em";}
+var rozmiar=parseFloat(lista[i].style.fontSize);
+rozmiar -=0.2;
+lista[i].style.fontSize=rozmiar+"em";}
+}
+function zmienKolor(){
+  var lista = document.getElementsByClassName('tekst');
+  for(var i=0;i<lista.length;i++){
+    lista[i].style.backgroundColor="white";}
+}
+
+      //lista[i].style.fontSize="30px";
+  //document.getElementsByClassName('tekst')[0].style.fontSize="30px"
+  </script>
+  <div class="tekst" style="background-color:red">
+  <h1>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h1>
+</div>
+  <div class="tekst" style="background-color:blue">
+  <img src="C:\Users\user2\Desktop\s-l300.jpg" style="float:left">
+  <h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h2>
+  <button type="button" style="height:30px" onclick="powiekszTekst()">Powieksz</button>
+  <button type="button" style="height:30px" onclick="zmniejszTekst()">Zmniejsz</button>
+  <button type="button" style="height:30px" onclick="zmienKolor()">Zmiana</button>
+</div>
+  <div class="tekst" style="background-color:green; clear:both">
+  <h3>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h3>
+</div>
+</body>
+</html>
